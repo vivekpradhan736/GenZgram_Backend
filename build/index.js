@@ -35,7 +35,7 @@ const app = (0, express_1.default)();
 const server = http_1.default.createServer(app);
 // Middleware
 app.use(express_1.default.json());
-const allowedOrigins = ["http://localhost:5173", "https://wrnv09jh-5173.inc1.devtunnels.ms"];
+const allowedOrigins = ["https://genzgram.vercel.app", "https://wrnv09jh-5173.inc1.devtunnels.ms"];
 app.use((0, cors_1.default)({
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {
@@ -79,7 +79,7 @@ app.use("/api/auth", auth_1.default);
 const io = new socket_io_1.Server(server, {
     pingTimeout: 60000,
     cors: {
-        origin: "http://localhost:5173",
+        origin: "https://genzgram.vercel.app",
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["my-custom-header"],
         credentials: true,

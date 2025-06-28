@@ -35,7 +35,7 @@ declare global {
 // Middleware
 app.use(express.json());
 
-const allowedOrigins = ["http://localhost:5173","https://wrnv09jh-5173.inc1.devtunnels.ms"];
+const allowedOrigins = ["https://genzgram.vercel.app","https://wrnv09jh-5173.inc1.devtunnels.ms"];
 
 app.use(
   cors({
@@ -83,7 +83,7 @@ app.use("/api/auth", authRoutes);
 const io = new SocketIOServer(server, {
   pingTimeout: 60000,
   cors: {
-    origin: "http://localhost:5173",
+    origin: "https://genzgram.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["my-custom-header"],
     credentials: true,
